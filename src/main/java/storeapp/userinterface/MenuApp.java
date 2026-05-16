@@ -1,9 +1,6 @@
 package storeapp.userinterface;
 
-import storeapp.domain.Customer;
 import storeapp.persistence.database.DataBaseConnectionMySql;
-import storeapp.services.CustumerServiceImpl;
-import storeapp.utils.CustomerFormValidation;
 import storeapp.view.AdminView;
 import storeapp.view.CustomerView;
 
@@ -124,9 +121,7 @@ public class MenuApp {
                     break;
                 case 2:
                     System.out.println("Ver mi  perfil");
-                    System.out.println("Ingrese su id para ver su perfil");
-                    int id = sc.nextInt();
-                    customerView.getCustumerById(id);
+                    customerView.getCustumerById();
                     break;
                 case 3:
                     System.out.println("Modificar mi perfil");
@@ -157,9 +152,7 @@ public class MenuApp {
                 case 2:
                     System.out.println("Ver perfil por id");
                     System.out.println("Buscar perfil");
-                    System.out.println("Ingrese el id del  perfil a buscar");
-                    int id = sc.nextInt();
-                    customerView.getCustumerById(id);
+                    customerView.getCustumerById();
                     break;
                 case 3:
                     System.out.println("Modificar perfil");
@@ -171,7 +164,7 @@ public class MenuApp {
                     break;
                 case 5:
                     System.out.println("Eliminar perfil");
-                    customerView.deleteCustomer();
+                   customerView.deleteCustomer();
                     break;
                 default:
                     System.out.println("Opcion no valida, por favor seleccione una opcion valida");
